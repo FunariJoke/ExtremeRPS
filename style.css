@@ -1,0 +1,18 @@
+body {
+    background-color: blanchedalmond;
+}
+
+header {
+    color: rebeccapurple;
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    background-color: tan;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+p {
+    text-align: center;
+    color: purple;
+}
