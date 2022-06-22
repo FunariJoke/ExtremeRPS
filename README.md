@@ -9,5 +9,4 @@ Open up the HTML webpage and read the instructions.
 
 Press the corresponding key and make your move.
 After every match an Alert will appear saying your move and the AI's move.
-It will be your responsibility to determine whether you've won against the AI or not.
 Play as many times as you like.

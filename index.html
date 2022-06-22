@@ -14,24 +14,67 @@
     </header>
     <p> Use the R key for rock, P key for paper, and the S key for scissors. Press your key whenever you're ready. </p>
 
+    <div id = "scores">
+        <p id="wins-text"> Wins: 0</p>
+        <p id="losses-text">Losses: 0</p>
+        <p id="ties-text">Ties: 0</p>
+    </div>
+
+    <hr>
+
+    <div id="selections"> 
+        <p id="userchoice-text">No Selections.</p>
+        <p id="computerchoice-text"></p>
+    </div>
 
     <script type="text/javascript">
 
+        var wins = 1;
+        var losses = 1;
+        var ties = 1;
+
         alert("This is a simple game of Rock Paper Scissors. You will be playing against a bot and will use the R key for rock, P key for paper, and S kery for scissors. Press your key whenever you're ready.")
         
+        var userChoiceText = document.getElementById("userchoice-text");
+        var computerChoiceText = document.getElementById("computerchoice-text");
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+        var tiesText = document.getElementById("ties-text");
+
+
+
         document.onkeyup = function(event) {
             console.log(event.key)
+
             var playerselection = event.key
+
             var computerOptions = ["r", "p", "s"]
+
             var computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+
             if ((playerselection === "r") || (playerselection === "p") || (playerselection === "s")) {
-                alert("User guess: " + playerselection);
-                alert("Computer guess: " + computerChoice);
+
+                userChoiceText.textContent = "You chose: " + playerselection;
+
+                computerChoiceText.textContent = "The computer chose: " + computerChoice;
+
             }
             else {
                 alert("invalid answer. Use the R, P, and S keys.")
             }
 
+            
+            if ((playerselection === "r" && computerChoice === "s") || (playerselection === "p" && computerChoice === "r") || (playerselection === "s" && computerChoice === "p")) {
+                winsText.textContent = "Wins: " + wins++;
+            }
+            
+            if ((playerselection === "s" && computerChoice === "r") || (playerselection === "r" && computerChoice === "p") || (playerselection === "p" && computerChoice === "s")) {
+                lossesText.textContent = "Losses: " + losses++;
+            }
+
+            if ((playerselection === "r" && computerChoice === "r") || (playerselection === "p" && computerChoice === "p") || (playerselection === "s" && computerChoice === "s")) {
+                tiesText.textContent = "Ties: " + ties++;
+            }
         }
 
 
