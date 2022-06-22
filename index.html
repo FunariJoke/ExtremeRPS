@@ -28,21 +28,22 @@
     </div>
 
     <script type="text/javascript">
-
+        // Sets default values to scores
         var wins = 1;
         var losses = 1;
         var ties = 1;
 
+        // Beginning message explaining the game and controls.
         alert("This is a simple game of Rock Paper Scissors. You will be playing against a bot and will use the R key for rock, P key for paper, and S kery for scissors. Press your key whenever you're ready.")
         
+        // Connects to the text system
         var userChoiceText = document.getElementById("userchoice-text");
         var computerChoiceText = document.getElementById("computerchoice-text");
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
         var tiesText = document.getElementById("ties-text");
 
-
-
+        // Logs the inputs and connects values to them
         document.onkeyup = function(event) {
             console.log(event.key)
 
@@ -52,6 +53,7 @@
 
             var computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
 
+            // Displays the input the player put and its validity
             if ((playerselection === "r") || (playerselection === "p") || (playerselection === "s")) {
 
                 userChoiceText.textContent = "You chose: " + playerselection;
@@ -63,7 +65,7 @@
                 alert("invalid answer. Use the R, P, and S keys.")
             }
 
-            
+            // updates
             if ((playerselection === "r" && computerChoice === "s") || (playerselection === "p" && computerChoice === "r") || (playerselection === "s" && computerChoice === "p")) {
                 winsText.textContent = "Wins: " + wins++;
             }
