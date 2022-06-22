@@ -7,6 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <p> P key for paper, and S kery for scissors. Press your key whenever you're ready. </p>
+
+
+    <script type="text/javascript">
+
+        alert("This is a simple game of Rock Paper Scissors. You will be playing against a bot and will use the R key for rock, P key for paper, and S kery for scissors. Press your key whenever you're ready.")
+        
+        document.onkeyup = function(event) {
+            console.log(event.key)
+            var playerselection = event.key
+            var computerOptions = ["r", "p", "s"]
+            var computerChoice = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+            if ((playerselection === "r") || (playerselection === "p") || (playerselection === "s")) {
+                alert("User guess: " + playerselection);
+                alert("Computer guess: " + computerChoice);
+            }
+            else {
+                alert("invalid answer. Use the R, P, and S keys.")
+            }
+
+        }
+
+
+
+    </script>
 </body>
 </html>
